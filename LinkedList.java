@@ -12,8 +12,8 @@ public class LinkedList<K> {
 		this.head = null;
 		this.tail = null;	
 	}
-	
-	public void add(INode<K> newNode) {
+	// Add nodes on top of the nodes by changing head
+	public void add(INode<K> newNode) { 
 		if(this.tail == null) {
 			this.tail = newNode;
 		}
@@ -26,7 +26,7 @@ public class LinkedList<K> {
 			this.head.setNext(tempNode);
 		}
 	}
-	
+	//Append nodes by changing tail
 	public void append(INode<K> newNode) {
 		if(this.head == null) {
 			this.head = newNode;
@@ -39,6 +39,12 @@ public class LinkedList<K> {
 			this.tail = newNode;
 
 		}
+	}
+	//Insert nodes between two nodes
+	public void insert(INode<K> Node,INode<K> newNode) {
+		INode<K> tempNode = Node.getNext();
+		Node.setNext(newNode);
+		newNode.setNext(tempNode);
 	}
 	public void printNodes() {
 		System.out.println("My Nodes: "+head);

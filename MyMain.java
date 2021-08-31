@@ -48,9 +48,23 @@ public class MyMain {
 		myLinkedList.add(myThirdNode);
 		myLinkedList.printNodes();
 	}
+	
+	//This method insert the element in between the linked list
+	public static void betweenNodes() {
+		Node<Integer> myFirstNode = new Node<>(56);
+		Node<Integer> mySecondNode = new Node<>(30);
+		Node<Integer> myThirdNode = new Node<>(70);
+		
+		LinkedList<Integer> myLinkedList = new LinkedList<Integer>();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.insert(myFirstNode,mySecondNode);
+		myLinkedList.printNodes();
+	}
 	public static void main(String [] args) {
 		Create();
 		addOnTop();
 		addBottom();
+		betweenNodes();
 	}
 }
