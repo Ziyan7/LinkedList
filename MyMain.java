@@ -4,7 +4,6 @@ package LinkedList;
  * the MyLinkedListTest class implements 
  * a main function which will call
  * Create() method to create a linked list 
- * 
  */
 
 public class MyMain {
@@ -20,8 +19,23 @@ public class MyMain {
 		
 	}
 	
+	/*This method adds the element to the top of the linked list
+	 *head needs to be changed
+	 */
+	public static void addOnTop() {
+		Node<Integer> myFirstNode = new Node<>(70);
+		Node<Integer> mySecondNode = new Node<>(30);
+		Node<Integer> myThirdNode = new Node<>(56);
+		
+		LinkedList<Integer> myLinkedList = new LinkedList<Integer>();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.add(mySecondNode);
+		myLinkedList.add(myThirdNode);
+		
+	}
+	
 	public static void main(String [] args) {
 		Create();
-		
+		addOnTop();
 	}
 }

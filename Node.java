@@ -36,14 +36,12 @@ public class Node<K> implements INode<K> {
 	}
 	
 	public String toString() {
-		StringBuilder myNodeString = new StringBuilder();
-		myNodeString.append("MyNode{" + "key=").append(key).append('}');
+		StringBuilder NodeString = new StringBuilder();
+		NodeString.append("Node{" + "key=").append(key).append('}');
 		if(next != null) {
-			myNodeString.append("->").append(next);
+			NodeString.append("->").append(next);
 		}
-		return myNodeString.toString();
+		return NodeString.toString();
 	}
-	
-	
 	
 }
