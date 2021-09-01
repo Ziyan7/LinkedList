@@ -108,6 +108,48 @@ public class MyMain {
 				System.out.println(result.getKey()+" is present");
 			myLinkedList.printNodes();
 		}
+		
+		//method to search element in the linked list
+			public static void searchInsert() {
+				Node<Integer> myFirstNode = new Node<>(70);
+				Node<Integer> mySecondNode = new Node<>(30);
+				Node<Integer> myThirdNode = new Node<>(56);
+				
+				LinkedList<Integer> myLinkedList = new LinkedList<Integer>();
+				myLinkedList.add(myFirstNode);
+				myLinkedList.add(mySecondNode);
+				myLinkedList.add(myThirdNode);
+				INode<Integer> result = myLinkedList.searchNode(30);
+				if(result == null)
+					System.out.println("Element not present");
+				else
+					System.out.println(result.getKey()+" is present");
+				myLinkedList.printNodes();
+			}
+			
+			//method to search for the key and add new node next to the searched key
+			public static void SearchInsert() {
+				Node<Integer> myFirstNode = new Node<>(56);
+				Node<Integer> mySecondNode = new Node<>(30);
+				Node<Integer> myThirdNode = new Node<>(70);
+				Node<Integer> myFourthNode = new Node<>(40);
+				
+				LinkedList<Integer> myLinkedList = new LinkedList<Integer>();
+				myLinkedList.add(myFirstNode);
+				myLinkedList.append(mySecondNode);
+				myLinkedList.append(myThirdNode);
+				INode<Integer> temp = myLinkedList.searchNode(30);
+				if(temp != null) {
+					INode<Integer> next = temp.getNext();
+					temp.setNext(myFourthNode);
+					myFourthNode.setNext(next);
+				}
+				else {
+					System.out.println("Key not present");
+				}
+				myLinkedList.printNodes();
+			}
+			
 	public static void main(String [] args) {
 		Create();
 		addOnTop();
@@ -116,5 +158,6 @@ public class MyMain {
 		DeleteTopNode();
 		DeleteLastNode();
 		searchCenterNode();
+		SearchInsert();
 	}
 }

@@ -79,7 +79,6 @@ public class LinkedList<K> {
 		return null;
 	}
 	
-	
 	public void printNodes() {
 		System.out.println("My Nodes: "+head);
 	}
