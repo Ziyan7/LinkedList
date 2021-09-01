@@ -150,6 +150,27 @@ public class MyMain {
 				myLinkedList.printNodes();
 			}
 			
+			/*method which deletes elements at the specified location in the linked list
+			 * count is used to get the number of nodes
+			 */
+			public static void deleteSpecifiedNode() {
+				Node<Integer> myFirstNode = new Node<>(56);
+				Node<Integer> mySecondNode = new Node<>(30);
+				Node<Integer> myThirdNode = new Node<>(40);
+				Node<Integer> myFourthNode = new Node<>(70);
+
+				LinkedList<Integer> myLinkedList = new LinkedList<Integer>();
+				myLinkedList.add(myFirstNode);
+				myLinkedList.append(mySecondNode);
+				myLinkedList.append(myThirdNode);
+				myLinkedList.append(myFourthNode);
+
+				INode<Integer> head = myLinkedList.deleteNode(40);
+				int count = myLinkedList.countNode(head);
+				System.out.println(count + " nodes are present in the linked list");
+				myLinkedList.printNodes();
+			}
+			
 	public static void main(String [] args) {
 		Create();
 		addOnTop();
@@ -159,5 +180,6 @@ public class MyMain {
 		DeleteLastNode();
 		searchCenterNode();
 		SearchInsert();
+		deleteSpecifiedNode();
 	}
 }

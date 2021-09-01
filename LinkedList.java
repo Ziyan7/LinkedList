@@ -68,6 +68,7 @@ public class LinkedList<K> {
 		return tempNode2;
 	}
 	
+	//Search key value is present
 	public INode<K> searchNode(K Key) {
 		INode<K> tempNode = head;
 		while(tempNode != null && tempNode.getNext() != null) {
@@ -79,6 +80,42 @@ public class LinkedList<K> {
 		return null;
 	}
 	
+	//Search for the key and then delete node
+	public INode<K> deleteNode(K Key) {
+		if(head == null || head.getNext() == null) {
+			return null;
+		}
+		INode<K> currentNode = this.head;
+		INode<K> previousNode = null;
+		
+		while(currentNode != null && currentNode.getKey() != Key) {
+			previousNode = currentNode;
+			currentNode = currentNode.getNext();
+		}
+		
+		if(currentNode == null) {
+			System.out.println("key not found");
+			return head;
+		}
+	    System.out.println(currentNode.getKey()+" deleted");
+		previousNode.setNext(currentNode.getNext());
+		return head;
+	}
+	
+	//Count the number of nodes
+	public int countNode(INode<K> head) {
+		INode<K> tempNode = head;
+		if(tempNode == null)
+			return 0;
+		if(tempNode.getNext() == null)
+			return 1;
+		int count = 1;
+		while(tempNode != null && tempNode.getNext() != null) {
+			tempNode = tempNode.getNext();
+			count++;
+		}
+		return count;
+	}
 	public void printNodes() {
 		System.out.println("My Nodes: "+head);
 	}
