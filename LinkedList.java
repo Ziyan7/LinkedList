@@ -32,7 +32,37 @@ public class LinkedList<K> {
 			INode<K>tempNode = this.head;
 			this.head = newNode;
 			this.head.setNext(tempNode);
+			sort();
 		}
+	}
+	
+	//method to sort the nodes in the linked list in ascending order
+	 
+	private void sort() 
+	{
+		INode<K>current = this.head;
+		INode<K>index=null;
+		K temp;
+		if(this.head == null) {
+			System.out.println("List is empty");
+		}
+		else {
+			while(current != null)
+			{
+				index = current.getNext();   //Node index will point to node next to current
+				while(index != null) {
+					//If current node's data is greater than index's node data, swap the data between them
+					if((int)current.getKey()>(int)index.getKey()){
+						temp = current.getKey();
+						current.setKey(index.getKey());
+						index.setKey(temp);
+					}
+					index = index.getNext();
+	                }
+	                current = current.getNext();
+			}  		
+		}
+		
 	}
 	
 	//Append nodes by changing tail

@@ -44,8 +44,8 @@ public class MyMain {
 		
 		LinkedList<Integer> myLinkedList = new LinkedList<Integer>();
 		myLinkedList.add(myFirstNode);
-		myLinkedList.add(mySecondNode);
-		myLinkedList.add(myThirdNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
 		myLinkedList.printNodes();
 	}
 	
@@ -181,5 +181,8 @@ public class MyMain {
 		searchCenterNode();
 		SearchInsert();
 		deleteSpecifiedNode();
+		//to check sorting
+		addOnTop();
+		
 	}
 }
