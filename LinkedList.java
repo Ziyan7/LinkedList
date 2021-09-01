@@ -40,12 +40,20 @@ public class LinkedList<K> {
 
 		}
 	}
+	
+	public INode<K> pop(){
+		INode<K> tempNode = this.head;
+		this.head = head.getNext();
+		return tempNode;
+	}
+	
 	//Insert nodes between two nodes
 	public void insert(INode<K> Node,INode<K> newNode) {
 		INode<K> tempNode = Node.getNext();
 		Node.setNext(newNode);
 		newNode.setNext(tempNode);
 	}
+	
 	public void printNodes() {
 		System.out.println("My Nodes: "+head);
 	}

@@ -61,10 +61,25 @@ public class MyMain {
 		myLinkedList.insert(myFirstNode,mySecondNode);
 		myLinkedList.printNodes();
 	}
+	//@method to delete the first node
+	public static void DeleteTopNode() {
+		Node<Integer> myFirstNode = new Node<>(70);
+		Node<Integer> mySecondNode = new Node<>(30);
+		Node<Integer> myThirdNode = new Node<>(56);
+		
+		LinkedList<Integer> myLinkedList = new LinkedList<Integer>();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.add(mySecondNode);
+		myLinkedList.add(myThirdNode);
+		INode<Integer> temp =myLinkedList.pop();
+		System.out.println(temp.getKey()+" has been deleted");
+		myLinkedList.printNodes();
+	}
 	public static void main(String [] args) {
 		Create();
 		addOnTop();
 		addBottom();
 		betweenNodes();
+		DeleteTopNode();
 	}
 }
